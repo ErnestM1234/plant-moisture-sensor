@@ -59,7 +59,7 @@ mqtt_topic_moisture = "your/mqtt/topic"
 ## Project Stack
 
 - Moisture Sensor - Responsible for measuring moisture levels
-- MQTT Client - Interfaces between Moisture Sensor and Database
+- MQTT Server - Interfaces between Moisture Sensor and Database
 - Database - Postgres database for persiting readings
 - Website - Next.js frontend for displaying readings
 
@@ -78,10 +78,19 @@ The sensor publishes JSON messages in the following format:
 
 ```json
 {
-    "plant_reader_id": "your_sensor_id",
-    "created_at": [year, month, day, hour, minute, second, weekday, 0],
-    "moisture_level": percentage,
-    "meta_data": {}
+  "plant_reader_id": "your_sensor_id",
+  "created_at": [
+    "year",
+    "month",
+    "day",
+    "hour",
+    "minute",
+    "second",
+    "weekday",
+    0
+  ],
+  "moisture_level": "percentage",
+  "meta_data": {}
 }
 ```
 
